@@ -25,7 +25,7 @@ App
 ```
 
 ## Architecture
-![architecture](resources/blog.png)
+![architecture](https://github.com/AllenAnZifeng/blog_content/blob/master/resources/blog.png?raw=true)
 
 ## Github Actions
 
