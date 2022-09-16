@@ -1,5 +1,4 @@
 # Blog Architecture
-
 Date: 2022/09/13\
 Description: The article demonstrates the software design and React implementation of the blog.\
 Category: Blog\
@@ -26,7 +25,7 @@ App
 ```
 
 ## Architecture
-![architecture](/resources/blog.png)
+![architecture](resources/blog.png)
 
 ## Github Actions
 
