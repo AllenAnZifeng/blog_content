@@ -26,7 +26,7 @@ App
 ```
 
 ## Architecture
-![architecture](/contents/blog.png)
+![architecture](/resources/blog.png)
 
 ## Github Actions
 
