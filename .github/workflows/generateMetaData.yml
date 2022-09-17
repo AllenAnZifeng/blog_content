@@ -5,6 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: list working directory
+        run: |
+            ls ${{ github.workspace }}
+            cd ${{ github.workspace }}/contents
       - name: push a file with content info
         run: |
           ls /home/runner/work/blog_frontend/blog_frontend/contents > fileInfo.txt
