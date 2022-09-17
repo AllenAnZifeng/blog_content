@@ -1,7 +1,7 @@
 # Ubuntu Server Setup
 
 Date: 2022/09/17\
-Description: Useful setups for Ubuntu
+Description: Useful setups for Ubuntu\
 Category: Ubuntu\
 Tag: Setup, Linux
 
