@@ -8,10 +8,10 @@ jobs:
       - name: list working directory
         run: |
             ls ${{ github.workspace }}
-            cd ${{ github.workspace }}/contents
+            ls ${{ github.workspace }}/contents
       - name: push a file with content info
         run: |
-          ls /home/runner/work/blog_frontend/blog_frontend/contents > fileInfo.txt
+          ls ${{ github.workspace }}/contents > fileInfo.txt
           git config --global user.email "devops@github.com"
           git config --global user.name "github-actions-bot"
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/AllenAnZifeng/blog_content.git
