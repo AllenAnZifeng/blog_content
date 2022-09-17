@@ -1,13 +1,17 @@
 # Blog Architecture
 
 Date: 2022/09/13\
-Description: The article demonstrates the software design and React implementation of the blog.\
+Description: The article demonstrates the software design and React implementation of the blog\
 Category: Blog\
 Tag: React, Architecture
 
 ## React Components
 
-Utilized **client side routing**, the root will display Home page, the blog URL will display the corresponding article.
+Utilized **client side routing**\
+Custom 404.html redirects URL to https://blog.zifengallen.me/?/blog/blog1.md \
+The browser would ignore everything after ? and visit index.html which contains the redirection\
+[Reference](https://github.com/rafgraph/spa-github-pages)
+
 ```
 App
 │
