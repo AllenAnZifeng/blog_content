@@ -1,0 +1,17 @@
+name: generate-content-files
+on: [push]
+jobs:
+  generate-content-files:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: push a file with content info
+        run: |
+          ls /home/runner/work/blog_frontend/blog_frontend/contents > fileInfo.txt
+          git config --global user.email "devops@github.com"
+          git config --global user.name "github-actions-bot"
+          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/AllenAnZifeng/blog_content.git
+          git commit -am "Automated report"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
