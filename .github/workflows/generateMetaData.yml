@@ -15,6 +15,6 @@ jobs:
           git config --global user.email "devops@github.com"
           git config --global user.name "github-actions-bot"
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/AllenAnZifeng/blog_content.git
-          ! git diff --exit-code || git add fileInfo.txt && git commit -m "Automated report" && git push
+          ! git diff --exit-code || (git add fileInfo.txt && git commit -m "Automated report" && git push)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
