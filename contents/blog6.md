@@ -3,7 +3,7 @@
 Data: 2022/12/2\
 Description: Virtual Box 双向复制黏贴\
 Category: VirtualBox\
-Tag: VirtualBox\
+Tag: VirtualBox
 
 ## Steps
 
