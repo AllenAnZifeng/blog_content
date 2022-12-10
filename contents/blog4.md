@@ -29,28 +29,6 @@ PreUp = iptables -t nat -A POSTROUTING -d 172.16.1.1 -p tcp --dport 12345 -j SNA
 PostDown = iptables -t nat -D  PREROUTING -d 172.105.27.138 -p tcp --dport 60012 -j DNAT --to 172.16.1.1:12345
 PostDown = iptables -t nat -D  POSTROUTING -d 172.16.1.1 -p tcp --dport 12345 -j SNAT --to 172.16.0.1
 
-# port forwarding Linode 60022 --> server 10022
-PreUp = iptables -t nat -A PREROUTING -d 172.105.27.138 -p tcp --dport 60022 -j DNAT --to 172.16.1.1:10022
-PreUp = iptables -t nat -A POSTROUTING -d 172.16.1.1 -p tcp --dport 10022 -j SNAT --to 172.16.0.1
-
-PostDown = iptables -t nat -D  PREROUTING -d 172.105.27.138 -p tcp --dport 60022 -j DNAT --to 172.16.1.1:10022
-PostDown = iptables -t nat -D  POSTROUTING -d 172.16.1.1 -p tcp --dport 10022 -j SNAT --to 172.16.0.1
-
-
-# port forwarding Linode 58080 --> server 8080 netease
-PreUp = iptables -t nat -A PREROUTING -d 172.105.27.138 -p tcp --dport 58080 -j DNAT --to 172.16.1.1:8080
-PreUp = iptables -t nat -A POSTROUTING -d 172.16.1.1 -p tcp --dport 8080 -j SNAT --to 172.16.0.1
-
-PostDown = iptables -t nat -D  PREROUTING -d 172.105.27.138 -p tcp --dport 58080 -j DNAT --to 172.16.1.1:8080
-PostDown = iptables -t nat -D  POSTROUTING -d 172.16.1.1 -p tcp --dport 8080 -j SNAT --to 172.16.0.1
-
-# port forwarding Linode 54533 --> server 4533 navidrome
-PreUp = iptables -t nat -A PREROUTING -d 172.105.27.138 -p tcp --dport 54533 -j DNAT --to 172.16.1.1:4533
-PreUp = iptables -t nat -A POSTROUTING -d 172.16.1.1 -p tcp --dport 4533 -j SNAT --to 172.16.0.1
-
-PostDown = iptables -t nat -D  PREROUTING -d 172.105.27.138 -p tcp --dport 54533 -j DNAT --to 172.16.1.1:4533
-PostDown = iptables -t nat -D  POSTROUTING -d 172.16.1.1 -p tcp --dport 4533 -j SNAT --to 172.16.0.1
-
 [Peer]
 # 这里写客户端的信息
 PublicKey = 客户端的公钥
