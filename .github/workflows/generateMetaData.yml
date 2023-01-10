@@ -8,7 +8,7 @@ jobs:
       - name: list working directory
         run: |
             ls ${{ github.workspace }}
-            ls ${{ github.workspace }}/contents
+            ls ${{ github.workspace }}/src
       - name: push a file with content info
         run: |
           ls ${{ github.workspace }}/contents > fileInfo.txt
