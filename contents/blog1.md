@@ -34,7 +34,7 @@ App
 
 ## Architecture
 
-![architecture](https://raw.githubusercontent.com/AllenAnZifeng/blog_content/master/resources/blog1/network_topology.png)
+![architecture](https://raw.githubusercontent.com/AllenAnZifeng/blog_content/master/resources/blog1/network_topology.svg)
 
 ##  Github Actions
 
