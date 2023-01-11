@@ -1,5 +1,8 @@
 name: generate-content-files
-on: [push]
+on:
+  push:
+    branches:
+      - "master"
 jobs:
   generate-content-files:
     runs-on: ubuntu-latest
