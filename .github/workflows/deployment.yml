@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: push a file with content info
         run: |
-          ls ${{ github.workspace }}/contents > fileInfo.txt
+          ls ${{ github.workspace }}/src > fileInfo.txt
           git config --global user.email "devops@github.com"
           git config --global user.name "github-actions-bot"
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/AllenAnZifeng/blog_content.git
