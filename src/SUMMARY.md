@@ -2,5 +2,9 @@
 
 [Introduction](../README.md)
 
-- [My First Chapter](blog1.md)
-- [My second Chapter](blog2.md)
+- [Blog Architecture](blog1.md)
+  - [Home Server Ubuntu Setup](blog3.md)
+  - [Wireguard Setup](blog4.md)
+- [Windows 装机软件](blog2.md)
+- [网易云使用指南](blog5.md)
+- [Virtual Box 使用指南](blog6.md)
