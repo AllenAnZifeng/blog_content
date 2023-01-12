@@ -56,3 +56,6 @@ wg-quick [up|down] server.conf
 ```
 
 [深度好文](http://xstarcd.github.io/wiki/Linux/iptables_forward_internetshare.html)
+
+更新：
+由于Wireguard config太复杂，现在用Zerotier组件内网，Nginx做代理

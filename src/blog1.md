@@ -50,5 +50,6 @@ The source code will be compiled and webpacked into the gh-pages branch on push.
 - Wireguard构建子网IP，端口转发可以用Zerotier加上Nginx逆向代理替换
 - Docker在build过程中开起Node服务会导致超时，因为Node在前台运行，所有setup脚本都应该在Docker起来后跑，注意RUN和CMD区别[Ref](https://stackoverflow.com/questions/37461868/difference-between-run-and-cmd-in-a-dockerfile#:~:text=RUN%20is%20an%20image%20build,you%20launch%20the%20built%20image.)
 - 通过Docker attach来看获取容器中的输入输出，将自己的terminal attach到容器上
+- GitHub Pages custom Domain是在gh-pages branch上commit CNAME,每次commit后CNAME消失是因为CICD的时候没把CNAME复制过去
 
 
