@@ -5,3 +5,5 @@ blog3.md
 blog4.md
 blog5.md
 blog6.md
+blog7.md
+blog8.md
