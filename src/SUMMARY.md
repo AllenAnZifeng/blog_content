@@ -10,3 +10,4 @@
 - [Virtual Box 使用指南](blog6.md)
 - [Linux 坑和小技巧](blog7.md)
 - [NYU网站项目笔记](blog8.md)
+- [滑雪双板level1考试笔记](blog9.md)
