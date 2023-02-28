@@ -12,3 +12,4 @@
 - [NYU网站项目笔记](blog8.md)
 - [滑雪双板level1考试笔记](blog9.md)
 - [Revelstoke 滑雪之旅](blog10.md)
+- [实用网页索引](blog11.md)
