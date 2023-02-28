@@ -13,5 +13,7 @@ Tag: web
 ## 朋友的网站
 [Thallium54](https://tgc54.com/) \
 [jn_xyp](https://yipeng.xin/) \
-[Jim](https://jimgao.tk/) 
+[Jim](https://jimgao.tk/) \
+[柚子哥](https://wangx308.github.io/)
+
 
