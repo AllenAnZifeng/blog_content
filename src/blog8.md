@@ -13,7 +13,7 @@ Tag: Web
 - 没有Node，从source上wget安装后发现缺少system dependency，太复杂只能弃坑
 - 没有Python3，从官网下载Python3 Linux Source Code在服务器上Build了一个Python3 [教程](https://pages.github.nceas.ucsb.edu/NCEAS/Computing/local_install_python_on_a_server.html)
 - 有了Python3之后开了一个Flask，没有权限修改Apache配置文件，使用了[php-reverse-proxy](https://github.com/nbhr/php-reverse-proxy)
-```editorconfig
+```
 RewriteRule ^flask/?(.*)$ /proxy.php?dst=http://127.0.0.1:8080/$1 [L] # 写在.htaccess
 # ^ start of the string
 # $ end of the string
@@ -23,9 +23,26 @@ RewriteRule ^flask/?(.*)$ /proxy.php?dst=http://127.0.0.1:8080/$1 [L] # 写在.h
 ```
 - 通过以上配置实现了访问 https://rookietherapist.hosting.nyu.edu/flask 跳转至服务器本地的Flask8080端口
 - 服务器端的MySQL只允许本地连接,需要使用putty tunneling 转发端口连接
-- 大坑:php的文件权限必须是644，一定要注意文件权限匹配，不然php不会生效
+- **天坑**:miniconda是user-level的包管理软件,巧妙解决没有sudo安装包的问题,注意用conda创建venv
+- **大坑**:web server(php)文件权限必须是644,文件夹755，一定要注意文件权限匹配,注意user和group，不然php不会生效
+
+```
+sudo chown newuser:newgroup example.txt
+```
 - 部署前端直接npm build到一个新branch上,到server上直接git clone已经built好的分支
 - 后端Django只能git clone然后开venv,pip install,最后改写成systemd service
+- 把前端git clone到服务器的www目录下
+```
+git clone -b built https://github.com/AllenAnZifeng/NYUFrontend.git www
+```
+- 服务器出现奇怪问题后发现是disk quota满了,因为多人共同使用服务器
+```
+quota -u username
+```
+- 从根目录找文件, 发现服务器上其他人的网站, 无视std error
+```
+find / -name *hosting.nyu*  2>/dev/null 
+```
 
 ![architecture](https://raw.githubusercontent.com/AllenAnZifeng/blog_content/master/resources/blog8/nyu_project.png)
 
