@@ -21,6 +21,7 @@ Tag: app
 
 我们看一下windows中wav文件的属性中的大小
 ![property.png](https://raw.githubusercontent.com/AllenAnZifeng/blog_content/master/resources/blog12/property.png)
+
 数字非常接近,之所以有一些出入是因为uint32只表示了data的大小,windows中的文件还会有一些metadata
 
 ## 踩过的坑
