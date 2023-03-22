@@ -2,6 +2,7 @@ SUMMARY.md
 blog1.md
 blog10.md
 blog11.md
+blog12.md
 blog2.md
 blog3.md
 blog4.md
