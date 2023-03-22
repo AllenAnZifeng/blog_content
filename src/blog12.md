@@ -9,18 +9,18 @@ Tag: app
 通过维基百科的定义不难发现Little Endian指的是least significant digits
 跑到前面去. 我的VS Code上的插件`Hex Editor`可以查看wav文件.
 
-![wav文件2进制信息](../resources/blog12/wav.png)
+![wav文件2进制信息](https://raw.githubusercontent.com/AllenAnZifeng/blog_content/master/resources/blog12/wav.png)
 
 根据[RIFF header](https://en.wikipedia.org/wiki/Resource_Interchange_File_Format)
 的说明,我高亮出来的4个byte就是an unsigned, little-endian 32-bit integer
 这个数字表示了data的大小
 
-![计算器](../resources/blog12/cal.png)
+![计算器](https://raw.githubusercontent.com/AllenAnZifeng/blog_content/master/resources/blog12/cal.png)
 - 注意放入计算器的顺序,每一个byte要看成一个整体
 - 在vscode的hex插件中,也可以看到uint32是576036
 
 我们看一下windows中wav文件的属性中的大小
-![property.png](../resources/blog12/property.png)
+![property.png](https://raw.githubusercontent.com/AllenAnZifeng/blog_content/master/resources/blog12/property.png)
 数字非常接近,之所以有一些出入是因为uint32只表示了data的大小,windows中的文件还会有一些metadata
 
 ## 踩过的坑
