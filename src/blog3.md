@@ -10,3 +10,4 @@ Tag: Setup, Linux
 * GNOME Tweak tool
 * Gufw Firewall
 * Wireguard
+* ZeroTier
