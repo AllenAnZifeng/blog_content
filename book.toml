@@ -1,2 +1,5 @@
 [book]
 title = "Allen's Tech Yard"
+
+[output.html]
+preferred-dark-theme = "navy"
