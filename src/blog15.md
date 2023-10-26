@@ -9,7 +9,7 @@ Data: 2023/10/26\
 
 解法一(top-down recursion)
 空间复杂度高
-```python3
+```python
 class Solution:
     def pathSum(self, root , targetSum: int) -> List[List[int]]:
 
@@ -36,7 +36,7 @@ class Solution:
 相比解法一节约空间
 用一个var记录当前的状态current path, 而不是用stack里的path copy记录状态
 
-```python3
+```python
 class Solution:
     def pathSum(self, root , targetSum: int) -> List[List[int]]:
         res = []
@@ -60,7 +60,7 @@ class Solution:
 
 解法三(bottom-up recursion)
 相比解法一节约空间
-```python3
+```python
 class Solution:
     def pathSum(self, root , targetSum: int) -> List[List[int]]:
 
