@@ -18,6 +18,7 @@
 # 刷题
 - [Leetcode小节](blog14.md)
   -  [Recursion](blog15.md)
+  -  [Data Structure](blog16.md)
 
 # 计算机
 - [Windows 装机软件](blog2.md)
