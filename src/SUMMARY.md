@@ -19,6 +19,8 @@
 - [Leetcode小节](blog14.md)
   -  [Recursion](blog15.md)
   -  [Data Structure](blog16.md)
+  -  [Dijkstra](blog18.md)
+  - [最小生成树MST](blog19.md)
 
 # 计算机
 - [Windows 装机软件](blog2.md)
