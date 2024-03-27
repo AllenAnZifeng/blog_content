@@ -8,6 +8,8 @@ blog14.md
 blog15.md
 blog16.md
 blog17.md
+blog18.md
+blog19.md
 blog2.md
 blog3.md
 blog4.md
