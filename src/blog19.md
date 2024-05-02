@@ -65,19 +65,25 @@ class Solution:
         # print(edges)
         edges.sort(key=lambda x:x[0]) 
   
-        dads = {}
-        for i in range(len(points)): # 一开始每个node都是自己的大爹
-            dads[i] = i
+        dads = {i:i for i in range(len(points))} # 一开始每个node都是自己的大爹
+        rank = {i:1 for i in range(len(points))} # rank是大爹的size
 
-        def find(node): # return parent of node 向上找大爹, 大爹是root node
-            while node != dads[node]:
-                node = dads[node]
-            return node
+        def find(node): # return parent of node
+            if node == dads[node]:
+                return node
+            dads[node] = find(dads[node]) # path compression
+            return dads[node]
         
         def union(n1,n2)->bool: # false if already same parent
-            if find(n1) == find(n2):
+            dad_n1, dad_n2 = find(n1), find(n2)
+            if dad_n1 == dad_n2:
                 return False
-            dads[find(n1)] = find(n2) # 把n1的大爹的大爹指向n2的大爹
+            if rank[dad_n1] > rank[dad_n2]:
+                dads[dad_n2] = dad_n1
+                rank[dad_n1] += rank[dad_n2]
+            else:
+                dads[dad_n1] = dad_n2
+                rank[dad_n2] += rank[dad_n1]
             return True
         
         cost = 0
