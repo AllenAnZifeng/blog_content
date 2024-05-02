@@ -1,0 +1,917 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Allen&#x27;s Tech Yard</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Introduction</a></li><li class="chapter-item expanded affix "><li class="part-title">Blog</li><li class="chapter-item expanded "><a href="blog1.html"><strong aria-hidden="true">1.</strong> Blog Architecture</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="blog3.html"><strong aria-hidden="true">1.1.</strong> Home Server Ubuntu Setup</a></li><li class="chapter-item expanded "><a href="blog4.html"><strong aria-hidden="true">1.2.</strong> Wireguard Setup</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">生活</li><li class="chapter-item expanded "><a href="blog9.html"><strong aria-hidden="true">2.</strong> 滑雪双板level1考试笔记</a></li><li class="chapter-item expanded "><a href="blog10.html"><strong aria-hidden="true">3.</strong> Revelstoke 滑雪之旅</a></li><li class="chapter-item expanded "><a href="blog13.html"><strong aria-hidden="true">4.</strong> 网球穿线技巧总结</a></li><li class="chapter-item expanded affix "><li class="part-title">刷题</li><li class="chapter-item expanded "><a href="blog14.html"><strong aria-hidden="true">5.</strong> Leetcode小节</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="blog15.html"><strong aria-hidden="true">5.1.</strong> Recursion</a></li><li class="chapter-item expanded "><a href="blog16.html"><strong aria-hidden="true">5.2.</strong> Data Structure</a></li><li class="chapter-item expanded "><a href="blog18.html"><strong aria-hidden="true">5.3.</strong> Dijkstra</a></li><li class="chapter-item expanded "><a href="blog19.html"><strong aria-hidden="true">5.4.</strong> 最小生成树MST</a></li></ol></li><li class="chapter-item expanded "><li class="part-title">计算机</li><li class="chapter-item expanded "><a href="blog2.html"><strong aria-hidden="true">6.</strong> Windows 装机软件</a></li><li class="chapter-item expanded "><a href="blog5.html"><strong aria-hidden="true">7.</strong> 网易云使用指南</a></li><li class="chapter-item expanded "><a href="blog6.html"><strong aria-hidden="true">8.</strong> Virtual Box 使用指南</a></li><li class="chapter-item expanded "><a href="blog7.html"><strong aria-hidden="true">9.</strong> Linux 坑和小技巧</a></li><li class="chapter-item expanded "><a href="blog8.html"><strong aria-hidden="true">10.</strong> NYU网站项目笔记</a></li><li class="chapter-item expanded "><a href="blog11.html"><strong aria-hidden="true">11.</strong> 实用网页索引</a></li><li class="chapter-item expanded "><a href="blog12.html"><strong aria-hidden="true">12.</strong> 听力测试App</a></li><li class="chapter-item expanded "><a href="blog17.html"><strong aria-hidden="true">13.</strong> 矩阵乘法</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Allen&#x27;s Tech Yard</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="notes"><a class="header" href="#notes">Notes</a></h1>
+<p>I hope to use this site to document my learning journey and the pitfalls I have stepped through.
+I hope my notes can help every reader.
+At first, I considered writing a bilingual version, but then I realized that my time was limited.</p>
+<p>我希望通过这个网站来记录我的学习路程和踩过的坑。
+我希望我的笔记能够帮助到每一位读者。
+起初我考虑过写中英双语的版本，但是后来发现还是经历有限，
+如果有幸碰上外国友人来看的话只能建议谷歌翻译了（估计根本没有)</p>
+<p>本站使用<a href="https://github.com/rust-lang/mdBook">mdBook</a>进行可视化。
+我的博客<a href="https://blog.zifengallen.me/">blog</a>上提供了和本站相同的信息</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="blog-architecture"><a class="header" href="#blog-architecture">Blog Architecture</a></h1>
+<p>Date: 2022/09/13<br />
+Description: The article demonstrates the software design and React implementation of the blog<br />
+Category: Blog<br />
+Tag: React, Architecture</p>
+<h2 id="react-components"><a class="header" href="#react-components">React Components</a></h2>
+<p>Utilized <strong>client side routing</strong><br />
+Custom 404.html redirects URL to https://blog.zifengallen.me/?/blog/blog1.md <br />
+The browser would ignore everything after ? and visit index.html which contains the redirection<br />
+<a href="https://github.com/rafgraph/spa-github-pages">Reference</a></p>
+<p>更新：
+在React Router中使用Hash Router后解决了这个问题，缺点是URL中出现#</p>
+<pre><code>App
+│
+└─── &quot;/&quot; 
+│    └─── HomePage
+│             └─── Header
+│             └─── Body
+│             │      └─── Card
+│             └─── Footer
+│   
+└─── &quot;/blog/:filename&quot;
+    └─── ArticlePage
+              └─── Header
+              └─── Article
+              └─── Footer  
+</code></pre>
+<h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
+<p><img src="https://raw.githubusercontent.com/AllenAnZifeng/blog_content/master/resources/blog1/network_topology_edited.jpg" alt="architecture" /></p>
+<h2 id="github-actions"><a class="header" href="#github-actions">Github Actions</a></h2>
+<p>The source code will be compiled and webpacked into the gh-pages branch on push.</p>
+<p><a href="https://github.com/AllenAnZifeng/blog_frontend/blob/master/.github/workflows/deployment.yml">source code</a></p>
+<h2 id="踩过的坑"><a class="header" href="#踩过的坑">踩过的坑</a></h2>
+<ul>
+<li>Ubuntu上root和普通用户看到的docker不一样</li>
+<li>Nginx同domain不同port可以使用相同SSL证书</li>
+<li>Nginx配置proxy_pass http://172.16.1.1:8000; 注意8000后面没有/，这样才能把整个url的完整路径转发过去</li>
+<li>Wireguard构建子网IP，端口转发可以用Zerotier加上Nginx逆向代理替换</li>
+<li>Docker在build过程中开起Node服务会导致超时，因为Node在前台运行，所有setup脚本都应该在Docker起来后跑，注意RUN和CMD区别<a href="https://stackoverflow.com/questions/37461868/difference-between-run-and-cmd-in-a-dockerfile#:%7E:text=RUN%20is%20an%20image%20build,you%20launch%20the%20built%20image.">Ref</a></li>
+<li>通过Docker attach来看获取容器中的输入输出，将自己的terminal attach到容器上</li>
+<li>GitHub Pages custom Domain是在gh-pages branch上commit CNAME,每次commit后CNAME消失是因为CICD的时候没把CNAME复制过去</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="ubuntu-server-setup"><a class="header" href="#ubuntu-server-setup">Ubuntu Server Setup</a></h1>
+<p>Date: 2022/09/17<br />
+Description: Useful setups for Ubuntu<br />
+Category: Ubuntu<br />
+Tag: Setup, Linux</p>
+<h2 id="setup-software"><a class="header" href="#setup-software">Setup Software</a></h2>
+<ul>
+<li>Fcitx</li>
+<li>GNOME Tweak tool</li>
+<li>Gufw Firewall</li>
+<li>Wireguard</li>
+<li>ZeroTier</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="home-server-with-wireguard"><a class="header" href="#home-server-with-wireguard">Home Server with Wireguard</a></h1>
+<p>Date: 2022/09/17<br />
+Description: Understanding and installing Wireguard to setup home Ubuntu server<br />
+Category: Wireguard<br />
+Tag: Setup</p>
+<h2 id="wireguard-configuration-files"><a class="header" href="#wireguard-configuration-files">Wireguard Configuration Files</a></h2>
+<h3 id="在公网的可见服务器"><a class="header" href="#在公网的可见服务器">在公网的可见服务器</a></h3>
+<p>配置文件放在 /etc/wireguard 下，文件名为 server.conf</p>
+<pre><code class="language-editorconfig">[Interface]
+# 这里写服务器自己的内网地址和端口
+Address = 172.16.0.1
+ListenPort = 8000
+PrivateKey = 服务器自己的私钥
+
+# packet forwarding
+PreUp = sysctl -w net.ipv4.ip_forward=1
+
+# port forwarding Linode 60012 --&gt; server 12345
+# 172.105.27.138 Linode服务器外网IP
+# -t: table -d: destination -j: jump -p: protocol DNAT/SNAT: destination/source network address translation
+# -A: append -D: delete 
+PreUp = iptables -t nat -A PREROUTING -d 172.105.27.138 -p tcp --dport 60012 -j DNAT --to 172.16.1.1:12345
+PreUp = iptables -t nat -A POSTROUTING -d 172.16.1.1 -p tcp --dport 12345 -j SNAT --to 172.16.0.1
+
+PostDown = iptables -t nat -D  PREROUTING -d 172.105.27.138 -p tcp --dport 60012 -j DNAT --to 172.16.1.1:12345
+PostDown = iptables -t nat -D  POSTROUTING -d 172.16.1.1 -p tcp --dport 12345 -j SNAT --to 172.16.0.1
+
+[Peer]
+# 这里写客户端的信息
+PublicKey = 客户端的公钥
+AllowedIPs = 172.16.0.0/16 # 这里写客户端的内网地址， 因为Wireguard自己连接，所以我们只要写一个范围
+PersistentKeepalive = 25
+</code></pre>
+<h3 id="在内网不可见的客户端"><a class="header" href="#在内网不可见的客户端">在内网不可见的客户端</a></h3>
+<pre><code class="language-editorconfig">[Interface]
+# 这里写客户端自己的信息
+Address = 172.16.1.1
+ListenPort = 8000
+PrivateKey = 客户端自己的私钥
+
+[Peer]
+PublicKey = # 可见服务器的公钥
+AllowedIPs = 172.16.0.0/16
+Endpoint = 172.105.27.138:8000 # 可见服务器的公网IP和端口
+PersistentKeepalive = 25
+</code></pre>
+<pre><code class="language-bash">wg-quick [up|down] server.conf
+# PreUp|PostDown # 对应了在启动|关闭时执行的命令
+</code></pre>
+<p><a href="http://xstarcd.github.io/wiki/Linux/iptables_forward_internetshare.html">深度好文</a></p>
+<p>更新：
+由于Wireguard config太复杂，现在用Zerotier组件内网，Nginx做代理</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="滑雪双板level1考试笔记"><a class="header" href="#滑雪双板level1考试笔记">滑雪双板level1考试笔记</a></h1>
+<p>Data: 2023/1/16<br />
+Description: level 1 ski certification program<br />
+Category: ski<br />
+Tag: life</p>
+<h2 id="level-1-教练考级"><a class="header" href="#level-1-教练考级">Level 1 教练考级</a></h2>
+<p>一共花了3天时间把一级教练证考了出来，每天9-3：30简直就是军训。</p>
+<h2 id="要点总结"><a class="header" href="#要点总结">要点总结</a></h2>
+<p>3 skills</p>
+<ul>
+<li>edging</li>
+<li>rotation</li>
+<li>pressure control</li>
+</ul>
+<p>教学流程 whole part whole
+通过整体进行教学，示范部分技巧，再做整体动作</p>
+<h2 id="注意事项"><a class="header" href="#注意事项">注意事项</a></h2>
+<ul>
+<li>在进入转弯的时候点杆 pole plant</li>
+<li>上下身分离</li>
+<li>脚踝，膝盖，髋关节同时主动发力，下半身lead</li>
+<li>感受八字转弯的时候转移重心</li>
+<li>平行的时候主动控制滑行的S形状</li>
+<li>杆子始终要在周围视线之内</li>
+<li>注意站姿，重心前倾</li>
+<li>在陡坡上注意倾斜和鹤弯 inclination &amp; angulation</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="revelstoke-滑雪之旅"><a class="header" href="#revelstoke-滑雪之旅">Revelstoke 滑雪之旅</a></h1>
+<p>Data: 2023/1/30<br />
+Description: ski trip<br />
+Category: ski<br />
+Tag: life</p>
+<h2 id="滑后感"><a class="header" href="#滑后感">滑后感</a></h2>
+<p>我作为唯一的双板被2级单板教练们吊打，立个flag下次滑大山之前要磨练一下双板技术。
+这次滑雪拉满所有生存技能 —— 悬崖脱板，树林滑滑梯，树洞勘探，双板跳崖。
+非常感谢2级教练们围着我进行教学，有幸来一个单板换刃初体验。第一次单板下缆车一个横板成功干翻团子教练，
+感谢她在我摔跤之前还想扶我一把。</p>
+<h2 id="单板总结"><a class="header" href="#单板总结">单板总结</a></h2>
+<ul>
+<li>重心在前脚，重心决定方向</li>
+<li>视线始终看着前进的方向，双手自然打开</li>
+<li>换刃的时候视线转移放缓慢，上半身和小腿平行，<strong>重心</strong>一定要跟上，人和山垂直</li>
+<li>走前刃如果要停下来视线看山上</li>
+<li>走前刃时弯膝盖，往下跪，重心压在鞋舌，挺髋关节，尿尿姿势，不翘脚尖</li>
+<li>前刃换后刃，整个人往后躺，肩膀，视线，膝盖同时缓慢向左侧打开</li>
+<li>滑行时注意高立刃，弯膝盖，防止卡刃</li>
+</ul>
+<h2 id="刘叔叔的经典总结"><a class="header" href="#刘叔叔的经典总结">刘叔叔的经典总结</a></h2>
+<p>一组杂图随感</p>
+<p>此行BC一共8天，掐去来回都是凌晨三点前往机场疯狂赶路的头尾，一共6天。</p>
+<p>滑满6天。
+​
+第一天​Sun Peaks。</p>
+<p>起初私心仅仅是不可免俗地想要去打卡加拿大单板4级教练的考场，没想到却意料之外地经历了逛游乐园一般快乐的一天。蓝鸟天，黑道上的粉雪软雪包，蓝绿道平整厚实的机压雪道，宽阔静谧的树林，这些体验让快被安省雪况憋坏的朋友们畅快爽滑，一天刷遍了三个山头。Sun Peaks真的是意外之喜。这里给我的总体感觉是，整个雪场各等级trail十分紧凑，想要体验游乐园一样一站式爽滑的朋友们，千万不要错过。</p>
+<p>大家滑到雪场关门，离开时都意犹未尽，恋恋不舍，因为接下来一周，天气预报说Revelstoke是暖冬天气，大伙都是心下惴惴。不过——</p>
+<p>Sun Peaks雪都好成这样了，几个小时外以大粉出名Revy 雪又能差到哪里去呢？
+​</p>
+<p>今年Revy“枯雪”，是十多年来降雪量最少的一年。截止一月底，十一月起的雪季总降雪量刚刚与上个雪季的十二月中累积降雪量持平。我们到的这一周山脚气温也在-5C 和5C之间徘徊，没有期待中的大粉，有的只是山下下雨山上下冰，络绎不绝和我们一样前来寻粉的雪客，还有一个接一个的蘑菇（mogul）大雪包，野生的，人造的，道内是，道外是，林子里也是，从山脚到山顶，一个接一个，没有尽头。</p>
+<p>说到这里，不得不感谢Revy这全北美最高的可滑雪道垂直落差，5800ft (安省的蓝山是700ft，魁省的翠湖是2100ft）,让我们有幸体验了一山三滑 ——山下蓝山春雪蘑菇，山腰翠湖硬雪蘑菇，山顶。。。山顶的雪厚，蘑菇比较软，确认了是西部大山的蘑菇，就是风特别大，扯着脸疼。</p>
+<p>没有粉，那就只好每条道都多滑滑，尽量不让这趟大山之行留下太多遗憾。大家伙儿正式开启了Revy修仙之旅。接下来的五天，每天都6点半天不亮起床，吃完早饭收拾出发，顶门上山滑到关门下山。有空就趁着坐缆车闲暇对付两口随身干粮，实在太累了就去山腰lodge小憩片刻，然后继续刷山。</p>
+<p>也许有人会问，这不就是军训嘛，怎么会叫修仙呢？之所以说是修仙，是因为我们真的有在“腾云驾雾”。</p>
+<p>我从来都觉得，神仙穿梭云间，飞机穿过云层，多多少少带着一丝浪漫主义色彩——直到Revy的Stoke缆车把我拉进被厚重云层笼罩的Revy山头。</p>
+<p>没有浪漫主义，只有恐怖主义。</p>
+<p>哪里有什么云间仙境，根本就是大雾糊脸。道内缆车下，能见度不超过5米，脚下是一个个被滑烂的雪蘑菇，大家小心翼翼地推着坡，互相喊着话确保大家没有走散，时不时还会有朋友被身边突然飞窜啸叫而过的路人雪友吓个屁蹲儿。然而，在滑到迷雾略微消散的开阔地带重新集合的时候，一清点人数，还是少了一人。</p>
+<p>我们一遍又一遍朝着来的方向喊朋友的名字，拉着一个又一个路过雪友询问有没有看到一个落单skier，无应答，无果。大家在焦急等待中熬过了15分钟，直到看到这个朋友踉踉跄跄地从旁边林子里钻出</p>
+<p>“哈哈哈 我tm好像滑错了”
+••••••</p>
+<p>我也想给他来点儿恐怖主义。</p>
+<p>每一天大家都是拖着疲惫身躯回家。到家吃完晚饭收拾完，绝大部分的交流也就仅限于互相探讨当日滑行体验和感想。</p>
+<p>10点熄灯。</p>
+<p>Rinse and Repeat.</p>
+<p>除了太陡的几条双黑道，这几天大家刷遍了所有的marked trail，那条山顶到山脚的15km The Last Spike绿道，更是不知道被大家刷了多少遍，甚至被同行的双板滑雪仅仅五日经验的朋友刷出了70kph的最高时速——熟练地让人心疼。</p>
+<p>不过，Revelstoke最终还是给了我们一丝慰籍。在这里的最后一日，盘桓多日的山顶乌云终于被吹散了，我们也终于有幸一睹了这座大山的全貌，并顶着大风成功攀登上了Revelstoke Subpeak，一览周遭壮丽的万千山峦沟壑——</p>
+<p>还是Banff好看。</p>
+<p>没有遗憾。
+​​
+​此行BC一共8天，掐去来回都是凌晨三点前往机场疯狂赶路的头尾，一共6天。</p>
+<p>滑满6天。</p>
+<p>感谢朋友们与我一同军训修仙。</p>
+<p>咱们明年继续？(Y / N)</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="网球穿线技巧总结"><a class="header" href="#网球穿线技巧总结">网球穿线技巧总结</a></h1>
+<p>Data: 2023/10/03<br />
+Description: 网球穿线<br />
+Category: 网球<br />
+Tag: 网球</p>
+<h2 id="概念"><a class="header" href="#概念">概念</a></h2>
+<p>把网球拍直立,竖着的线叫竖线(main), 横着的线叫横线(cross)</p>
+<h2 id="技巧"><a class="header" href="#技巧">技巧</a></h2>
+<h3 id="固定球拍"><a class="header" href="#固定球拍">固定球拍</a></h3>
+<ul>
+<li>把球拍居中固定,可以用拍面上下的突起线孔作为参考</li>
+<li>观察拍框穿线痕迹,判断竖线一开始从哪里穿进去开始</li>
+</ul>
+<h3 id="竖线"><a class="header" href="#竖线">竖线</a></h3>
+<ul>
+<li>先穿竖线, 用竖线中间的拍孔把网球线对半裁剪</li>
+<li>剪切网球线的时候留一个角度,这样线头更锋利,更容易穿过拍孔</li>
+<li>从居中的中线往两侧均匀穿线, 保证拍面受力对称</li>
+<li>穿到远中位置的时候注意跳过横线拍孔</li>
+<li>观察之前的拍孔,确定竖线的拍孔</li>
+<li>可以用尖头工具戳拍孔开路</li>
+<li>竖线穿完之后最后记得绕弯打个结,左右各一</li>
+</ul>
+<h3 id="横线"><a class="header" href="#横线">横线</a></h3>
+<ul>
+<li>横线从拍头开始,先打结固定住头部</li>
+<li>对于竖线要上下交替, 走斜线, 双手在拍面上下</li>
+<li>防止收紧横线的时候刮伤拍线-- 会越来越紧, 注意用镊子把松的横线往拍子下拉, 再收紧</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="leetcode小节"><a class="header" href="#leetcode小节">Leetcode小节</a></h1>
+<p>Data: 2023/10/26</p>
+<h2 id="概念-1"><a class="header" href="#概念-1">概念</a></h2>
+<p>2024 New Grad 找工作, 督促自己分享对一些题目解法的深入理解.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="recursion"><a class="header" href="#recursion">Recursion</a></h1>
+<p>Data: 2023/10/26</p>
+<h3 id="113-path-sum-ii"><a class="header" href="#113-path-sum-ii"><a href="https://leetcode.com/problems/path-sum-ii/submissions/1084870339/">113. Path Sum II</a></a></h3>
+<p>给了一个tree和targetSum, 返回从root到leafnode可以加到targetSum的路径</p>
+<p>解法一(top-down recursion)
+空间复杂度高</p>
+<pre><code class="language-python">class Solution:
+    def pathSum(self, root , targetSum: int) -&gt; List[List[int]]:
+
+        res = []
+        def recur(root,targetSum,path):
+            if root == None:
+                return None
+
+            path.append(root.val)
+
+            if root.val == targetSum and root.left == None and root.right == None:
+                res.append(path)
+
+            recur(root.left,targetSum-root.val,path[:])
+            recur(root.right, targetSum-root.val, path[:])
+
+
+        recur(root,targetSum,[])
+
+        return res
+</code></pre>
+<p>解法二(backtracking recursion)
+相比解法一节约空间
+用一个var记录当前的状态current path, 而不是用stack里的path copy记录状态</p>
+<pre><code class="language-python">class Solution:
+    def pathSum(self, root , targetSum: int) -&gt; List[List[int]]:
+        res = []
+        cur = []
+
+        def recur(root,targetSum):
+            if root == None:
+                return None
+
+            cur.append(root.val)
+            if root.val == targetSum and root.left == None and root.right == None:
+                res.append(cur[:])
+
+            recur(root.left,targetSum-root.val)
+            recur(root.right,targetSum-root.val)
+            cur.pop()
+
+        recur(root,targetSum)
+        return res
+</code></pre>
+<p>解法三(bottom-up recursion)
+相比解法一节约空间</p>
+<pre><code class="language-python">class Solution:
+    def pathSum(self, root , targetSum: int) -&gt; List[List[int]]:
+
+        def recur(root,targetSum):
+            if root == None:
+                return []
+
+            if root.val == targetSum and root.left == None and root.right == None:
+                return [[root.val]]
+
+            left = recur(root.left,targetSum-root.val)
+            right = recur(root.right, targetSum - root.val)
+
+            validPaths = left + right # list concatenation
+
+            return [[root.val] + p for p in validPaths]
+
+        return recur(root,targetSum)
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="data-structure"><a class="header" href="#data-structure">Data Structure</a></h1>
+<p>Data: 2023/10/30</p>
+<h2 id="matrix"><a class="header" href="#matrix">Matrix</a></h2>
+<pre><code class="language-python"># 初始化矩阵
+zero_matrix = [[0 for _ in range(len(matrix[0]))] for _ in range(len(matrix))]
+# 注意不能这样 --&gt; 复制了同一个list reference, 会导致修改一个list的值, 其他list也会跟着改变
+zero_matrix = [[0] * len(matrix[0])] * len(matrix)
+
+# 矩阵 Transpose
+transposed_matrix = zip(*matrix)
+# 先对row写逻辑,然后transpose再对col使用
+</code></pre>
+<h2 id="linked-list"><a class="header" href="#linked-list">Linked List</a></h2>
+<ul>
+<li>使用Dummy node, 使得head不需要特殊处理</li>
+<li>双指针
+<ul>
+<li>Detecting cycles - Have two pointers, where one pointer increments twice as much as the other, if the two pointers meet, means that there is a cycle</li>
+<li>Getting the kth from last node - Have two pointers, where one is k nodes ahead of the other. When the node ahead reaches the end, the other node is k nodes behind</li>
+<li>Getting the middle node - Have two pointers, where one pointer increments twice as much as the other. When the faster node reaches the end of the list, the slower node will be at the middle</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dijkstra"><a class="header" href="#dijkstra">Dijkstra</a></h1>
+<p>Data: 2024/03/26</p>
+<h3 id="743-network-delay-time"><a class="header" href="#743-network-delay-time"><a href="https://leetcode.com/problems/network-delay-time/">743. Network Delay Time</a></a></h3>
+<pre><code class="language-python">class Solution:
+    def networkDelayTime(self, times: List[List[int]], n: int, k: int) -&gt; int:
+        # 首先创建一个graph
+        # distance 是用来记录从k到每个node的当前最短距离
+        distance = {}
+        g = {}
+        for i in range(1,n+1):
+            distance[i] = float('inf') # 初始化每个node到k的距离是无穷大
+            g[i] = {}
+        distance[k] = 0 # 从k到k的距离是0
+        
+        for src,dst,weight in times:
+            g[src][dst] = weight  # directed graph
+        
+        h = [(0,k)] # min heap (distance to k, node)
+
+        while h:
+            dist, cur = heapq.heappop(h) # dist: 从k到cur的距离
+            for nei,weight in g[cur].items(): # 遍历cur的邻居们, weight: 从cur到nei的距离
+                if dist + weight &lt; distance[nei]: 
+                    distance[nei] = dist + weight
+                    heapq.heappush(h,(distance[nei],nei))
+        
+        res = max(distance.values())
+        if res == float('inf'):
+            return -1
+        return res
+</code></pre>
+<p>注意: </p>
+<ul>
+<li>heap中会出现重复访问的node, 但是min heap确保最短距离的node会被pop出来.</li>
+<li><code>dist + weight &lt; distance[nei]</code> 这个更新条件确保重复访问并且不合格的node不会被再加入heap</li>
+<li>distance字典起到了visit set的作用</li>
+<li>这个问题不能用visit set因为有些node就是会被重复访问, 如果能够更新最短距离,就需要再次更新他所有的邻居</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="mst"><a class="header" href="#mst">MST</a></h1>
+<p>Data: 2024/03/26</p>
+<h3 id="1135-connecting-cities-with-minimum-cost"><a class="header" href="#1135-connecting-cities-with-minimum-cost"><a href="https://leetcode.com/problems/connecting-cities-with-minimum-cost/">1135. Connecting Cities With Minimum Cost</a></a></h3>
+<h2 id="prims-algorithm"><a class="header" href="#prims-algorithm">Prim's Algorithm</a></h2>
+<p>对node进行贪婪</p>
+<pre><code class="language-python">class Solution:
+    def minCostConnectPoints(self, points: List[List[int]]) -&gt; int:
+        points = [tuple(point) for point in points]
+        g = {}
+        for i in range(len(points)):
+            g[points[i]] = {}
+
+        for i in range(len(points)):   # 创建双向全连接图
+            for j in range(i+1,len(points)):
+                xi,yi = points[i]
+                xj,yj = points[j]
+                g[(xi,yi)][(xj,yj)] = abs(xi-xj) + abs(yi-yj)
+                g[(xj,yj)][(xi,yi)] = abs(xi-xj) + abs(yi-yj)
+
+        cost = 0
+        h = [] # min heap
+        for nei, dist in g[points[0]].items():
+            h.append((dist,nei))
+        
+        heapq.heapify(h)
+        visit = set()
+        visit.add(points[0])
+
+        while h:
+            dist, cur = heapq.heappop(h) # cur是离目前访问过所有node最近的node
+            if cur in visit: # 因为每次都是贪婪最短距离,之后的重复访问的node一定会更远,直接跳过
+                continue
+            visit.add(cur)
+            cost += dist
+            for nei, weight in g[cur].items():
+                heapq.heappush(h,(weight,nei))
+        
+        return cost
+</code></pre>
+<p>注意:</p>
+<ul>
+<li>time complexity: O(n^2 * log(n))</li>
+<li>heap size O(n^2) with heap operation O(log(n))</li>
+<li>一开始随便从一个node开始,用visit set保证每个node只被访问一次</li>
+<li>每次都会把新加入的node的所有邻居加入heap</li>
+<li>min heap中会有重复的node, 但是只有离<strong>目前访问过所有node</strong>最近的node会被pop出来</li>
+</ul>
+<h2 id="kruskals-algorithm"><a class="header" href="#kruskals-algorithm">Kruskal's Algorithm</a></h2>
+<p>对edge进行贪婪</p>
+<pre><code class="language-python">class Solution:
+    def minCostConnectPoints(self, points: List[List[int]]) -&gt; int:
+        points = [tuple(point) for point in points]
+        edges = [] # length, n1, n2
+        for i in range(len(points)):
+            for j in range(i+1,len(points)):
+                xi,yi = points[i]
+                xj,yj = points[j]
+                length = abs(xi-xj) + abs(yi-yj)
+                edges.append((length,i,j))
+        # print(edges)
+        edges.sort(key=lambda x:x[0]) 
+  
+        dads = {i:i for i in range(len(points))} # 一开始每个node都是自己的大爹
+        rank = {i:1 for i in range(len(points))} # rank是大爹的size
+
+        def find(node): # return parent of node
+            if node == dads[node]:
+                return node
+            dads[node] = find(dads[node]) # path compression
+            return dads[node]
+        
+        def union(n1,n2)-&gt;bool: # false if already same parent
+            dad_n1, dad_n2 = find(n1), find(n2)
+            if dad_n1 == dad_n2:
+                return False
+            if rank[dad_n1] &gt; rank[dad_n2]:
+                dads[dad_n2] = dad_n1
+                rank[dad_n1] += rank[dad_n2]
+            else:
+                dads[dad_n1] = dad_n2
+                rank[dad_n2] += rank[dad_n1]
+            return True
+        
+        cost = 0
+        for length, n1, n2 in edges:
+            if union(n1,n2):
+                cost += length
+        return cost
+</code></pre>
+<p>注意:</p>
+<ul>
+<li>time complexity: O(n^2 * log(n)) --&gt; edge数量是n^2, sort edge是最费时间的</li>
+<li>一个edge两端的node不能是同一个大爹,否则会形成cycle</li>
+<li>大爹指的是root node</li>
+<li>union-find 算法来找大爹,合并大爹</li>
+<li>当合并n1, n2时, 要把n1的大爹的大爹指向n2的大爹,这样n1的所有爹们都指向n2的大爹</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="windows-tools"><a class="header" href="#windows-tools">Windows Tools</a></h1>
+<p>Date: 2022/09/14<br />
+Description: A list of useful tools for Windows<br />
+Category: Windows<br />
+Tag: Setup</p>
+<h2 id="setup-software-1"><a class="header" href="#setup-software-1">Setup Software</a></h2>
+<ul>
+<li>bandzip</li>
+<li>fastcopy</li>
+<li>spacesniffer</li>
+<li>everything</li>
+<li>potplayer</li>
+<li>adobe dc pro</li>
+<li>office</li>
+<li>jetbrain toolbox</li>
+<li>python 3.8, java JDK 8</li>
+<li>vscode</li>
+<li>notepad++</li>
+<li>virtualbox</li>
+<li>putty</li>
+<li>winscp</li>
+<li>wsl 2</li>
+<li>postman</li>
+<li>teamviewer</li>
+<li>v2ray</li>
+<li>wechat</li>
+<li>cuda</li>
+<li>custom fonts -- Mono sarasa, CMU sarif (LATEX)</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="网易云使用指南"><a class="header" href="#网易云使用指南">网易云使用指南</a></h1>
+<p>Data: 2022/11/17<br />
+Description: 使用中继服务器授权歌曲使用<br />
+Category: Hack<br />
+Tag: NetEase</p>
+<h2 id="setup"><a class="header" href="#setup">Setup</a></h2>
+<p>IOS 设备下载<a href="https://github.com/UnblockNeteaseMusic/server/blob/enhanced/ca.crt">证书</a></p>
+<p>ShadowRocket 小火箭配置如下，注意将节点备注改成 Netease Music</p>
+<pre><code>[Rule]
+# Netease Music Advertising
+DOMAIN,admusicpic.music.126.net,REJECT
+DOMAIN,iadmat.nosdn.127.net,REJECT
+DOMAIN,iadmusicmat.music.126.net,REJECT
+DOMAIN,iadmusicmatvideo.music.126.net,REJECT
+
+# Netease Music
+DOMAIN,apm3.music.163.com,Netease Music
+DOMAIN,apm.music.163.com,Netease Music
+DOMAIN,interface3.music.163.com,Netease Music
+DOMAIN,interface.music.163.com,Netease Music
+DOMAIN,music.163.com,Netease Music
+IP-CIDR,39.105.63.80/32,Netease Music
+IP-CIDR,39.105.175.128/32,Netease Music
+IP-CIDR,47.100.127.239/32,Netease Music
+IP-CIDR,59.111.19.33/32,Netease Music
+IP-CIDR,59.111.160.195/32,Netease Music
+IP-CIDR,59.111.160.197/32,Netease Music
+IP-CIDR,103.126.92.132/32,Netease Music
+IP-CIDR,103.126.92.133/32,Netease Music
+IP-CIDR,112.13.119.18/32,Netease Music
+IP-CIDR,112.13.122.4/32,Netease Music
+IP-CIDR,115.236.118.34/32,Netease Music
+IP-CIDR,115.236.121.4/32,Netease Music
+IP-CIDR,118.24.63.156/32,Netease Music
+IP-CIDR,182.92.170.253/32,Netease Music
+IP-CIDR,193.112.159.225/32,Netease Music
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="virtual-box-使用指南"><a class="header" href="#virtual-box-使用指南">Virtual Box 使用指南</a></h1>
+<p>Data: 2022/12/2<br />
+Description: Virtual Box 双向复制黏贴<br />
+Category: VirtualBox<br />
+Tag: VirtualBox</p>
+<h2 id="steps"><a class="header" href="#steps">Steps</a></h2>
+<p>右Ctrl + F 切换界面
+进入视图 --&gt; 自动调整显示尺寸</p>
+<p>进入设备 --&gt; 安装增强功能</p>
+<p>打开文件管理器进入 VBox_GAs_x.x.x </p>
+<pre><code class="language-bash">sudo ./VBoxLinuxAdditions.run
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="linux-坑和小技巧"><a class="header" href="#linux-坑和小技巧">Linux 坑和小技巧</a></h1>
+<p>Data: 2023/1/11<br />
+Description: Linux 坑和小技巧<br />
+Category: Linux<br />
+Tag: Linux</p>
+<h2 id="sysem-service"><a class="header" href="#sysem-service">Sysem Service</a></h2>
+<pre><code class="language-bash">sudo systemctl is-enabled ***.service #查看服务是否开机自动启动
+sudo systemctl enable/disable ***.service
+sudo systemctl start/stop/status/restart ***.service
+</code></pre>
+<h2 id="rm"><a class="header" href="#rm">rm</a></h2>
+<pre><code class="language-bash">rm !(a.txt) # 删除当前目录下所有文件除了a.txt
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="nyu网站项目笔记"><a class="header" href="#nyu网站项目笔记">NYU网站项目笔记</a></h1>
+<p>Data: 2023/1/11<br />
+Description: Web Dev<br />
+Category: Web，Linux<br />
+Tag: Web</p>
+<h2 id="背景介绍"><a class="header" href="#背景介绍">背景介绍</a></h2>
+<p>帮老同学忙接手了一个做LGBTQ+调查问卷的项目，服务器没有root权限，只有LMAP环境，没有apt等包管理软件。之前跑路的码农使用了PHP，没有使用别的技术栈。</p>
+<h2 id="踩过的坑-1"><a class="header" href="#踩过的坑-1">踩过的坑</a></h2>
+<ul>
+<li>没有Node，从source上wget安装后发现缺少system dependency，太复杂只能弃坑</li>
+<li>没有Python3，从官网下载Python3 Linux Source Code在服务器上Build了一个Python3 <a href="https://pages.github.nceas.ucsb.edu/NCEAS/Computing/local_install_python_on_a_server.html">教程</a></li>
+<li>有了Python3之后开了一个Flask，没有权限修改Apache配置文件，使用了<a href="https://github.com/nbhr/php-reverse-proxy">php-reverse-proxy</a></li>
+</ul>
+<pre><code>RewriteRule ^flask/?(.*)$ /proxy.php?dst=http://127.0.0.1:8080/$1 [L] # 写在.htaccess
+# ^ start of the string
+# $ end of the string
+# /? 0 or 1 /
+# (.*) matching group, any character any number of repetition
+# $1 first matching group
+</code></pre>
+<ul>
+<li>通过以上配置实现了访问 https://rookietherapist.hosting.nyu.edu/flask 跳转至服务器本地的Flask8080端口</li>
+<li>服务器端的MySQL只允许本地连接,需要使用putty tunneling 转发端口连接</li>
+<li><strong>天坑</strong>:miniconda是user-level的包管理软件,巧妙解决没有sudo安装包的问题,注意用conda创建venv</li>
+<li><strong>大坑</strong>:web server(php)文件权限必须是644,文件夹755，一定要注意文件权限匹配,注意user和group，不然php不会生效</li>
+</ul>
+<pre><code>sudo chown newuser:newgroup example.txt
+</code></pre>
+<ul>
+<li>部署前端直接npm build到一个新branch上,到server上直接git clone已经built好的分支</li>
+<li>后端Django只能git clone然后开venv,pip install,最后改写成systemd service</li>
+<li>把前端git clone到服务器的www目录下</li>
+</ul>
+<pre><code>git clone -b built https://github.com/AllenAnZifeng/NYUFrontend.git www
+</code></pre>
+<ul>
+<li>服务器出现奇怪问题后发现是disk quota满了,因为多人共同使用服务器</li>
+</ul>
+<pre><code>quota -u username
+</code></pre>
+<ul>
+<li>从根目录找文件, 发现服务器上其他人的网站, 无视std error</li>
+</ul>
+<pre><code>find / -name *hosting.nyu*  2&gt;/dev/null 
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/AllenAnZifeng/blog_content/master/resources/blog8/nyu_project.png" alt="architecture" /></p>
+<h2 id="nginx-reverse-proxy-配置"><a class="header" href="#nginx-reverse-proxy-配置">Nginx Reverse Proxy 配置</a></h2>
+<ul>
+<li>由于linode.zifengallen.me域名配置过SSL证书，所以需要所有端口都添加SSL配置</li>
+<li>一个SSL证书可以给这个Virtual Host的所有端口使用</li>
+</ul>
+<pre><code># 这个配置文件在Linode服务器的 /etc/nginx/sites-available/linode.zifengallen.me
+server {
+listen [::]:8888 ssl ipv6only=on; # managed by Certbot
+listen 8888 ssl; # managed by Certbot
+ssl_certificate /etc/letsencrypt/live/linode.zifengallen.me/fullchain.pem; # managed by Certbot
+ssl_certificate_key /etc/letsencrypt/live/linode.zifengallen.me/privkey.pem; # managed by Certbot
+include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+server_name linode.zifengallen.me;
+location / {
+    proxy_pass http://127.0.0.1:8000;
+ }
+}
+</code></pre>
+<h2 id="client-side-routing-问题"><a class="header" href="#client-side-routing-问题">Client Side Routing 问题</a></h2>
+<p>由于后端是API Django Server，并不认识前端的路由，所以需要在后端配置一个catch-all route,
+让所有的路由都指向index.html，然后前端的React Router会自动处理路由。</p>
+<ul>
+<li>由于没有权限, 继续写在.htaccess, 注意可以创建多个.htaccess可以放在不同的folder下</li>
+<li>Apache server 会改写访问的URL,如果不是index.html就会改成index.html返回给客户端</li>
+</ul>
+<pre><code>&lt;IfModule mod_rewrite.c&gt;
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+&lt;/IfModule&gt;
+</code></pre>
+<h2 id="django-systemd-service"><a class="header" href="#django-systemd-service">Django Systemd Service</a></h2>
+<ul>
+<li>文件位置 /etc/systemd/system/nyubackend.service</li>
+<li>注意Python路径是venv里的Python</li>
+</ul>
+<pre><code class="language-editorconfig">[Unit]
+Description=NYU Backend LGBT+
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/root/NYUBackend
+ExecStart=/root/NYUBackend/venv/bin/python /root/NYUBackend/manage.py runserver
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<ul>
+<li>reload systemd and start service</li>
+<li>enable to start automatically at boot time</li>
+<li>查看日志并且follow</li>
+</ul>
+<pre><code class="language-bash">sudo systemctl daemon-reload
+sudo systemctl start nyubackend
+sudo systemctl enable nyubackend
+sudo journalctl -u nyubackend -f 
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="实用网页索引"><a class="header" href="#实用网页索引">实用网页索引</a></h1>
+<p>Data: 2023/2/28<br />
+Description: 实用网页索引<br />
+Category: Tool<br />
+Tag: web</p>
+<h2 id="web相关工具"><a class="header" href="#web相关工具">Web相关工具</a></h2>
+<p><a href="https://uptimerobot.com/">uptime robot网站监控</a> <br />
+<a href="https://10minemail.com/en/">10分钟email</a></p>
+<h2 id="朋友的网站"><a class="header" href="#朋友的网站">朋友的网站</a></h2>
+<p><a href="https://tgc54.com/">Thallium54</a> <br />
+<a href="https://yipeng.xin/">jn_xyp</a> <br />
+<a href="https://jimgao.tk/">Jim</a> <br />
+<a href="https://wangx308.github.io/">柚子哥</a> <br />
+<a href="https://sunhuanhuan920.github.io/">老孙</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="听力测试app"><a class="header" href="#听力测试app">听力测试App</a></h1>
+<p>Data: 2023/3/22<br />
+Description: 听力测试App开发天坑<br />
+Category: Flutter<br />
+Tag: app</p>
+<h2 id="little-endian-理解"><a class="header" href="#little-endian-理解">Little Endian 理解</a></h2>
+<p>通过维基百科的定义不难发现Little Endian指的是least significant digits
+跑到前面去. 我的VS Code上的插件<code>Hex Editor</code>可以查看wav文件.</p>
+<p><img src="https://raw.githubusercontent.com/AllenAnZifeng/blog_content/master/resources/blog12/wav.png" alt="wav文件2进制信息" /></p>
+<p>根据<a href="https://en.wikipedia.org/wiki/Resource_Interchange_File_Format">RIFF header</a>
+的说明,我高亮出来的4个byte就是an unsigned, little-endian 32-bit integer
+这个数字表示了data的大小</p>
+<p><img src="https://raw.githubusercontent.com/AllenAnZifeng/blog_content/master/resources/blog12/cal.png" alt="计算器" /></p>
+<ul>
+<li>注意放入计算器的顺序,每一个byte要看成一个整体</li>
+<li>在vscode的hex插件中,也可以看到uint32是576036</li>
+</ul>
+<p>我们看一下windows中wav文件的属性中的大小
+<img src="https://raw.githubusercontent.com/AllenAnZifeng/blog_content/master/resources/blog12/property.png" alt="property.png" /></p>
+<p>数字非常接近,之所以有一些出入是因为uint32只表示了data的大小,windows中的文件还会有一些metadata</p>
+<h2 id="踩过的坑-2"><a class="header" href="#踩过的坑-2">踩过的坑</a></h2>
+<ul>
+<li>Matlab上生成的Pure Tone音频随着频率的增加,振幅会逐渐减小,
+发现是信号发生形变,随后发现是采样频率不够高导致的</li>
+<li>使用goldwave对音频做不同声道的处理</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="矩阵乘法"><a class="header" href="#矩阵乘法">矩阵乘法</a></h1>
+<p>Data: 2024/01/22</p>
+<h2 id="note"><a class="header" href="#note">Note</a></h2>
+<p>矩阵乘法的时间复杂度为O(n^3). 当电脑内存有限的情况下, 减少复制进内存的次数可以加速矩阵乘法.</p>
+<h2 id="传统矩阵乘法"><a class="header" href="#传统矩阵乘法">传统矩阵乘法</a></h2>
+<p>4x4的矩阵AB相乘, 得到的结果矩阵为R.</p>
+<pre><code>R = A * B
+</code></pre>
+<p>在计算R的第一行, 电脑需要把A的第一行读入内存, 然后读取B的每一列.
+假设把一个数字复制进内存耗时 O(1), 因为R有n行, B中的每一列有n个数字,
+所以计算整个R O(n^3)的时间复杂度.</p>
+<p>观察下图中T0, T1, T2, T3 -- 左上角四分之一的矩阵,用传统乘法计算需要复制多少个数字进入内存呢?
+对于每一个Ti需要一行A,一列B,所以一共需要复制32个数字进入内存.</p>
+<pre><code>4    *    4    *   4 = 32
+t0-t3    a1-a4    b1-b4
+图中的下角标有点乱了XD
+</code></pre>
+<p><img src="https://raw.githubusercontent.com/AllenAnZifeng/blog_content/master/resources/blog17/mat._cut.jpg" alt="图片" /></p>
+<h2 id="tiled-矩阵乘法----像瓷砖一样一块一块乘"><a class="header" href="#tiled-矩阵乘法----像瓷砖一样一块一块乘">Tiled 矩阵乘法 -- 像瓷砖一样一块一块乘</a></h2>
+<p>观察上图我们把矩阵分成了4块2x2的tile. 现在重新计算T0 - T3, 先把2个tile分别放在A, B的左上角,
+然后将A, B的tile做传统矩阵乘法,写入R. 然后将A的tile向右移动, B的tile向下移动, 再进行一次传统矩阵乘法写入R.
+对于T0来说, 图中打勾的元素都已经相乘并且加入到T0. </p>
+<p>用这种方法需要复制多少个数字进入内存呢?</p>
+<p>我们用了A,B中的2个tile,分别移动了一次, 所以一共复制了16个数字进入内存, 比传统方法少了一半 32/16 = 2.</p>
+<pre><code>(4   +    4)    *   2 = 16
+tile A    tile B    2步
+</code></pre>
+<p>注意: 加法乘法的运算次数没有变化, 复制数字进入内存的数量减半.</p>
+<p>假设tile的大小为b x b, 矩阵n x n, 计算复制数字进入内存的复杂度</p>
+<pre><code>对于R中每一个tile来说, A,B 中的tile要复制多少数字?
+2 * b^2 * (n/b) 
+n/b 是tile移动的步数, b^2是每个tile的面积, 2是A,B两个tile
+
+那么R中一共有多少个tile需要计算呢?
+(n/b)^2
+
+所以复杂度如下:
+2 * b^2 * (n/b) * (n/b)^2 = 2 * n^3 / b = O(n^3 / b) 
+
+</code></pre>
+<h2 id="总结"><a class="header" href="#总结">总结</a></h2>
+<p>Memory Copy Complexity
+传统矩阵乘法: O(n^3)
+Tiled 矩阵乘法: O(n^3 / b)</p>
+<p>怎么理解除以b?
+计算R中T0, T2时, B中的b1, b3被同时复制进入内存, 相当于B的column中的一个长度为b的segment被复制进内存后完成了R中2个row的计算, 
+这样对column的复制从n减少到n/b</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>
